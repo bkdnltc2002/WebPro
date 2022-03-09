@@ -6,27 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <h1 href=></h1>
-    <header> <strong>Contact</strong></header>
 </head>
 
 <body>
     <main>
-        <form >
+        <form method="post" action="Untitled-2.html" enctype="multipart/form-data">
             <!-- Purpose -->
-            <h1>Purpose of contact</h1>
-            <select name='santas-list'>
-                <option value='' selected>Please Select</option>
-                <option>Business</option>
-                <option>Personal</option>
+            <label for="contact_purpose">Contact Purpose</label>
+            <select name="contact_purpose">
+                <option selected>Please Select</option>
+                <option value="B">Business</option>
+                <option value="P">Personal</option>
               </select>
-            <h1>Name<input type='text' id='data' maxlength="50"/></h1>
-            <h1>Email<input type='email' id='data' pattern=".+@globex\.com" required/></h1>
-            <h1>Phone<input type='number' id='data' /></h1>
+            <h1>Name<input type='text' id='data' placeholder="Enter your name" maxlength="50"/></h1>
+            <h1>Email<input type='email' id='data' pattern="[^ @]*@[^ @]*" placeholder="Enter your email" /></h1>
+            <h1>Phone<input type='number' id='data' placeholder="Enter your phone number"/></h1>
 
             <!-- Contact method -->
             <h1>Contact method</h1>
-            <input type='radio' name='data'/>Email
-            <input type='radio' name='data'/>Phone
+            <input type='radio' name='method' id='data' value="E"/>Email
+            <input type='radio' name='method' id='data'value="P"/>Phone
 
             <!-- Contact days -->
             <h1>Contact day(s)</h1>
@@ -38,10 +37,19 @@
             <input type='checkbox' id='data'/>Saturday
             <input type='checkbox' id='data'/>Sunday
 
+            <!-- Attachment -->
+            <h1><label for="myfile">Select a file:</label></h1>
+            <input type="file" id="myfile" name="myfile">
+
             <!-- Message -->
             <h1>Message: <textarea></textarea></h1>
-            <h2><button>Send</button>  <button onclick="document.getElementById('myInput').value = ''">Clear</button></h2>
+            <h2>
+                <input type="submit" name="act" value="Send">  
+                <button onclick="document.getElementById('data').value = ''">Clear</button></h2>
           </form>
+
+           <!-- Media -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cNu8U3hAfzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </main>
 </body>
 
