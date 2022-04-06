@@ -16,16 +16,25 @@
     </style>
 
     <script>
-      const button = document.querySelector("check_btn");
-      button.addEventListener("click", () => {
-        const phone = document.querySelector("#phone").value;
-        var regexLandline = /^(\d[1-9]{1})(\d[0-9]{1,2})(\d[0-9]{5})$/;
-        var regexMobile = /^0(\d[1-9]{1})(\d[0-9]{5})$/;
-        if (regexMobile.test(phone) || regexLandline.test(phone)) {
-          alert("Valid phone number!");
-        } else {
-          alert("Invalid phone number!");
-        }
+      var student_list = [];
+      var ID = document.querySelector("#id").value;
+      var name = document.querySelector("#name").value;
+      const add_btn = document.querySelector("#add_btn");
+      const view_btn = document.querySelector("#view_btn");
+      const delete_btn = document.querySelector("#delete_btn");
+
+      add_btn.addEventListener("click", () => {
+        student_list.push({ name: ID });
+        alert(name + "is added");
+      });
+
+      view_btn.viewEventListener("click", () => {
+        console.log(student_list);
+      });
+
+      delete_btn.deleteEventListener("click", () => {
+        student_list.pop({ name: ID });
+        alert(name + "is added");
       });
     </script>
   </head>
