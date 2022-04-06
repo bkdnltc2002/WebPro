@@ -14,29 +14,6 @@
         margin: 5px;
       }
     </style>
-
-    <script>
-      var student_list = [];
-      var ID = document.querySelector("#id").value;
-      var name = document.querySelector("#name").value;
-      const add_btn = document.querySelector("#add_btn");
-      const view_btn = document.querySelector("#view_btn");
-      const delete_btn = document.querySelector("#delete_btn");
-
-      add_btn.addEventListener("click", () => {
-        student_list.push({ name: ID });
-        alert(name + "is added");
-      });
-
-      view_btn.viewEventListener("click", () => {
-        console.log(student_list);
-      });
-
-      delete_btn.deleteEventListener("click", () => {
-        student_list.pop({ name: ID });
-        alert(name + "is added");
-      });
-    </script>
   </head>
 
   <body>
@@ -54,5 +31,31 @@
       <input id="delete_btn" type="button" value="Delete By Student ID" />
     </div>
     <div id="student_list"></div>
+
+    <script>
+      var student_list = [];
+      
+      const add_btn = document.querySelector("#add_btn");
+      add_btn.addEventListener("click", function() {
+        var stu ={
+          id : document.querySelector("#id").value,
+          name : document.querySelector("#name").value
+        } 
+        student_list.push(stu);
+      });
+
+      const view_btn = document.querySelector("#view_btn");
+      view_btn.addEventListener("click", function()  {
+        for (let stu of student_list){
+          alert(stu['id']+ " : "+stu.name);
+        }
+      });
+
+      const delete_btn = document.querySelector("#delete_btn");
+      delete_btn.addEventListener("click", function()  {
+        student_list.pop(stu.id);
+      });
+    </script>
+
   </body>
 </html>
