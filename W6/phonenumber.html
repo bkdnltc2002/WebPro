@@ -4,33 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Phone Validator</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-
-      label {
-        display: block;
-        width: 100%;
-      }
-    </style>
-
-    <script>
-      const button = document.querySelector("check_btn");
-      button.addEventListener("click", () => {
-        const phone = document.querySelector("#phone").value;
-        var regexLandline = /^(\d[1-9]{1})(\d[0-9]{1,2})(\d[0-9]{5})$/;
-        var regexMobile = /^0(\d[1-9]{1})(\d[0-9]{5})$/;
-        if (regexMobile.test(phone) || regexLandline.test(phone)) {
-          alert("Valid phone number!");
-        } else {
-          alert("Invalid phone number!");
-        }
-      });
-    </script>
   </head>
 
   <body>
+
     <div>
       <div><label for="phone">Phone</label></div>
       <div><input id="phone" /></div>
@@ -38,5 +15,20 @@
     <div>
       <input id="check_btn" type="button" value="Check" />
     </div>
+
+    <script>
+      const button = document.querySelector("#check_btn");
+      button.addEventListener("click", () => {
+        const phone = document.querySelector("#phone").value;
+        var regexLandline = /^([1-9][0-9]{1,2})[0-9]{7,8}$/;
+        var regexMobile = /^0([1-9][0-9])[0-9]{7}$/;
+        if (regexMobile.test(phone) || regexLandline.test(phone)) {
+          alert("Valid phone number!");
+        } else {
+          alert("Invalid phone number!");
+        }
+      });
+    </script>
+
   </body>
 </html>
